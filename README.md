@@ -5,5 +5,5 @@
 
 #### Authors: Ashley Chompre, Oriyomi Oluwaseun Adeliyi, and Zulymar García Sonera
  
- #### Video:
+ #### Video: https://vimeo.com/815735673
  
