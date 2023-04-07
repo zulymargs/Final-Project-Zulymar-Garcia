@@ -1,0 +1,65 @@
+type Game {
+    id: ID
+    title: String!
+    esrbRating: String!
+    description: String!
+    price: Float!
+    studio: String!
+    quantity: Int
+}
+
+
+type Console {
+    id: ID
+    model: String!
+    manufacturer: String!
+    memory_amount: String!
+    processor: String!
+    price: Float!
+    quantity: Int
+}
+
+type Tshirt {
+    id: ID
+    size : String!
+    color: String!
+    description: String!
+    price : Float!
+    quantity: Int
+}
+
+type Invoice {
+    id: ID
+    name: String!
+    street : String!
+    city : String!
+    state : String!
+    zipcode : String!
+    item_type : String!
+    item_id : Int
+    unit_price: Float!
+    quantity: Int
+    subtotal: Float!
+    tax: Float!
+    processing_fee : Float!
+    total : Float!
+}
+
+type fee {
+    product_type: ID
+    fee : Float!
+}
+
+type tax {
+    state: ID
+    rate: Float!
+}
+
+type Query{
+    findGameById(id:ID): Game
+    findConsoleById(id:ID): Console
+    findGameByTitle(title:String):Game
+    findGameByESRB(esrbRating:String):Game
+    findGameByStudio(studio:String):Game
+    findConsoleByManufacturer(manufacturer:String):Console
+}

@@ -1,0 +1,1607 @@
+# 20230406230350
+#  http://localhost:5000/v3/api-docs
+
+    {
+      "openapi": "3.0.1",
+      "info": {
+        "title": "OpenAPI definition",
+        "version": "v0"
+      },
+      "servers": [
+        {
+          "url": "http://localhost:5000",
+          "description": "Generated server url"
+        }
+      ],
+      "paths": {
+        "/tshirt": {
+          "get": {
+            "tags": [
+                "t-shirt-controller"
+            ],
+            "operationId": "getallTShirts",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/TShirt"
+                      }
+                    }
+                  }
+                }
+              },
+              "404": {
+                "description": "Not Found",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/CustomErrorResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Unprocessable Entity",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "oneOf": [
+                        {
+                          "$ref": "#/components/schemas/CustomErrorResponse"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/CustomErrorResponse"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "put": {
+            "tags": [
+                "t-shirt-controller"
+            ],
+            "operationId": "updateTshirt",
+            "requestBody": {
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/TShirt"
+                  }
+                }
+              },
+              "required": true
+            },
+            "responses": {
+              "204": {
+                "description": "No Content"
+              },
+              "404": {
+                "description": "Not Found",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/CustomErrorResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Unprocessable Entity",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "oneOf": [
+                        {
+                          "$ref": "#/components/schemas/CustomErrorResponse"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/CustomErrorResponse"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "post": {
+            "tags": [
+                "t-shirt-controller"
+            ],
+            "operationId": "addTshirt",
+            "requestBody": {
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/TShirt"
+                  }
+                }
+              },
+              "required": true
+            },
+            "responses": {
+              "201": {
+                "description": "Created",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/TShirt"
+                    }
+                  }
+                }
+              },
+              "404": {
+                "description": "Not Found",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/CustomErrorResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Unprocessable Entity",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "oneOf": [
+                        {
+                          "$ref": "#/components/schemas/CustomErrorResponse"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/CustomErrorResponse"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/games": {
+          "get": {
+            "tags": [
+                "game-controller"
+            ],
+            "operationId": "getAllAuthors",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Game"
+                      }
+                    }
+                  }
+                }
+              },
+              "404": {
+                "description": "Not Found",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/CustomErrorResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Unprocessable Entity",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "oneOf": [
+                        {
+                          "$ref": "#/components/schemas/CustomErrorResponse"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/CustomErrorResponse"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "put": {
+            "tags": [
+                "game-controller"
+            ],
+            "operationId": "updateExistingAuthor",
+            "requestBody": {
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Game"
+                  }
+                }
+              },
+              "required": true
+            },
+            "responses": {
+              "204": {
+                "description": "No Content"
+              },
+              "404": {
+                "description": "Not Found",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/CustomErrorResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Unprocessable Entity",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "oneOf": [
+                        {
+                          "$ref": "#/components/schemas/CustomErrorResponse"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/CustomErrorResponse"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "post": {
+            "tags": [
+                "game-controller"
+            ],
+            "operationId": "createGame",
+            "requestBody": {
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Game"
+                  }
+                }
+              },
+              "required": true
+            },
+            "responses": {
+              "201": {
+                "description": "Created",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Game"
+                    }
+                  }
+                }
+              },
+              "404": {
+                "description": "Not Found",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/CustomErrorResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Unprocessable Entity",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "oneOf": [
+                        {
+                          "$ref": "#/components/schemas/CustomErrorResponse"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/CustomErrorResponse"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/consoles": {
+          "get": {
+            "tags": [
+                "console-controller"
+            ],
+            "operationId": "getConsoles",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Console"
+                      }
+                    }
+                  }
+                }
+              },
+              "404": {
+                "description": "Not Found",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/CustomErrorResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Unprocessable Entity",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "oneOf": [
+                        {
+                          "$ref": "#/components/schemas/CustomErrorResponse"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/CustomErrorResponse"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "put": {
+            "tags": [
+                "console-controller"
+            ],
+            "operationId": "updateConsole",
+            "requestBody": {
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Console"
+                  }
+                }
+              },
+              "required": true
+            },
+            "responses": {
+              "204": {
+                "description": "No Content"
+              },
+              "404": {
+                "description": "Not Found",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/CustomErrorResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Unprocessable Entity",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "oneOf": [
+                        {
+                          "$ref": "#/components/schemas/CustomErrorResponse"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/CustomErrorResponse"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "post": {
+            "tags": [
+                "console-controller"
+            ],
+            "operationId": "addConsole",
+            "requestBody": {
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Console"
+                  }
+                }
+              },
+              "required": true
+            },
+            "responses": {
+              "201": {
+                "description": "Created",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Console"
+                    }
+                  }
+                }
+              },
+              "404": {
+                "description": "Not Found",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/CustomErrorResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Unprocessable Entity",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "oneOf": [
+                        {
+                          "$ref": "#/components/schemas/CustomErrorResponse"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/CustomErrorResponse"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/invoices": {
+          "get": {
+            "tags": [
+                "invoice-controller"
+            ],
+            "operationId": "getInvoices",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/InvoiceViewModel"
+                      }
+                    }
+                  }
+                }
+              },
+              "404": {
+                "description": "Not Found",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/CustomErrorResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Unprocessable Entity",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "oneOf": [
+                        {
+                          "$ref": "#/components/schemas/CustomErrorResponse"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/CustomErrorResponse"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "post": {
+            "tags": [
+                "invoice-controller"
+            ],
+            "operationId": "addInvoice",
+            "requestBody": {
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InvoiceViewModel"
+                  }
+                }
+              },
+              "required": true
+            },
+            "responses": {
+              "201": {
+                "description": "Created",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/InvoiceViewModel"
+                    }
+                  }
+                }
+              },
+              "404": {
+                "description": "Not Found",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/CustomErrorResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Unprocessable Entity",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "oneOf": [
+                        {
+                          "$ref": "#/components/schemas/CustomErrorResponse"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/CustomErrorResponse"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/tshirt/{size}": {
+          "get": {
+            "tags": [
+                "t-shirt-controller"
+            ],
+            "operationId": "getTshirtbySize",
+            "parameters": [
+              {
+                "name": "size",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "OK",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/TShirt"
+                      }
+                    }
+                  }
+                }
+              },
+              "404": {
+                "description": "Not Found",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/CustomErrorResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Unprocessable Entity",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "oneOf": [
+                        {
+                          "$ref": "#/components/schemas/CustomErrorResponse"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/CustomErrorResponse"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/tshirt/{id}": {
+          "get": {
+            "tags": [
+                "t-shirt-controller"
+            ],
+            "operationId": "getTshirtbyID",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "OK",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/TShirt"
+                    }
+                  }
+                }
+              },
+              "404": {
+                "description": "Not Found",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/CustomErrorResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Unprocessable Entity",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "oneOf": [
+                        {
+                          "$ref": "#/components/schemas/CustomErrorResponse"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/CustomErrorResponse"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "delete": {
+            "tags": [
+                "t-shirt-controller"
+            ],
+            "operationId": "deleteTShirt",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            ],
+            "responses": {
+              "204": {
+                "description": "No Content"
+              },
+              "404": {
+                "description": "Not Found",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/CustomErrorResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Unprocessable Entity",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "oneOf": [
+                        {
+                          "$ref": "#/components/schemas/CustomErrorResponse"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/CustomErrorResponse"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/tshirt/{color}": {
+          "get": {
+            "tags": [
+                "t-shirt-controller"
+            ],
+            "operationId": "getTshirtbyColor",
+            "parameters": [
+              {
+                "name": "color",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "OK",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/TShirt"
+                      }
+                    }
+                  }
+                }
+              },
+              "404": {
+                "description": "Not Found",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/CustomErrorResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Unprocessable Entity",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "oneOf": [
+                        {
+                          "$ref": "#/components/schemas/CustomErrorResponse"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/CustomErrorResponse"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/invoices/{name}": {
+          "get": {
+            "tags": [
+                "invoice-controller"
+            ],
+            "operationId": "getInvoiceByName",
+            "parameters": [
+              {
+                "name": "name",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "OK",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/InvoiceViewModel"
+                      }
+                    }
+                  }
+                }
+              },
+              "404": {
+                "description": "Not Found",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/CustomErrorResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Unprocessable Entity",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "oneOf": [
+                        {
+                          "$ref": "#/components/schemas/CustomErrorResponse"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/CustomErrorResponse"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/invoices/{id}": {
+          "get": {
+            "tags": [
+                "invoice-controller"
+            ],
+            "operationId": "getInvoiceById",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "OK",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/InvoiceViewModel"
+                    }
+                  }
+                }
+              },
+              "404": {
+                "description": "Not Found",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/CustomErrorResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Unprocessable Entity",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "oneOf": [
+                        {
+                          "$ref": "#/components/schemas/CustomErrorResponse"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/CustomErrorResponse"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/games/{id}": {
+          "get": {
+            "tags": [
+                "game-controller"
+            ],
+            "operationId": "getGameByID",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "OK",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Game"
+                    }
+                  }
+                }
+              },
+              "404": {
+                "description": "Not Found",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/CustomErrorResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Unprocessable Entity",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "oneOf": [
+                        {
+                          "$ref": "#/components/schemas/CustomErrorResponse"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/CustomErrorResponse"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "delete": {
+            "tags": [
+                "game-controller"
+            ],
+            "operationId": "deleteGame",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            ],
+            "responses": {
+              "204": {
+                "description": "No Content"
+              },
+              "404": {
+                "description": "Not Found",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/CustomErrorResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Unprocessable Entity",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "oneOf": [
+                        {
+                          "$ref": "#/components/schemas/CustomErrorResponse"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/CustomErrorResponse"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/games/title/{title}": {
+          "get": {
+            "tags": [
+                "game-controller"
+            ],
+            "operationId": "getGameByTitle",
+            "parameters": [
+              {
+                "name": "title",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "OK",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Game"
+                    }
+                  }
+                }
+              },
+              "404": {
+                "description": "Not Found",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/CustomErrorResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Unprocessable Entity",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "oneOf": [
+                        {
+                          "$ref": "#/components/schemas/CustomErrorResponse"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/CustomErrorResponse"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/games/studio/{studio}": {
+          "get": {
+            "tags": [
+                "game-controller"
+            ],
+            "operationId": "getGameByStudio",
+            "parameters": [
+              {
+                "name": "studio",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "OK",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Game"
+                      }
+                    }
+                  }
+                }
+              },
+              "404": {
+                "description": "Not Found",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/CustomErrorResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Unprocessable Entity",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "oneOf": [
+                        {
+                          "$ref": "#/components/schemas/CustomErrorResponse"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/CustomErrorResponse"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/games/ESRB/{esrbRating}": {
+          "get": {
+            "tags": [
+                "game-controller"
+            ],
+            "operationId": "getGameByESRB",
+            "parameters": [
+              {
+                "name": "esrbRating",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "OK",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Game"
+                      }
+                    }
+                  }
+                }
+              },
+              "404": {
+                "description": "Not Found",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/CustomErrorResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Unprocessable Entity",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "oneOf": [
+                        {
+                          "$ref": "#/components/schemas/CustomErrorResponse"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/CustomErrorResponse"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/consoles/{manufacturer}": {
+          "get": {
+            "tags": [
+                "console-controller"
+            ],
+            "operationId": "getConsoleByManufacturer",
+            "parameters": [
+              {
+                "name": "manufacturer",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "OK",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Console"
+                      }
+                    }
+                  }
+                }
+              },
+              "404": {
+                "description": "Not Found",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/CustomErrorResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Unprocessable Entity",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "oneOf": [
+                        {
+                          "$ref": "#/components/schemas/CustomErrorResponse"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/CustomErrorResponse"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/consoles/{id}": {
+          "get": {
+            "tags": [
+                "console-controller"
+            ],
+            "operationId": "getConsoleById",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "OK",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Console"
+                    }
+                  }
+                }
+              },
+              "404": {
+                "description": "Not Found",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/CustomErrorResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Unprocessable Entity",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "oneOf": [
+                        {
+                          "$ref": "#/components/schemas/CustomErrorResponse"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/CustomErrorResponse"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "delete": {
+            "tags": [
+                "console-controller"
+            ],
+            "operationId": "deleteConsole",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            ],
+            "responses": {
+              "204": {
+                "description": "No Content"
+              },
+              "404": {
+                "description": "Not Found",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "$ref": "#/components/schemas/CustomErrorResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Unprocessable Entity",
+                "content": {
+                  "*/*": {
+                    "schema": {
+                      "oneOf": [
+                        {
+                          "$ref": "#/components/schemas/CustomErrorResponse"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/CustomErrorResponse"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "components": {
+        "schemas": {
+          "CustomErrorResponse": {
+            "type": "object",
+            "properties": {
+              "errorMsg": {
+                "type": "string"
+              },
+              "status": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "errorCode": {
+                "type": "string"
+              },
+              "timestamp": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          },
+          "TShirt": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "size": {
+                "type": "string"
+              },
+              "color": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "price": {
+                "type": "number"
+              },
+              "quantity": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          },
+          "Game": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "price": {
+                "type": "number"
+              },
+              "studio": {
+                "type": "string"
+              },
+              "quantity": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "esrb": {
+                "type": "string"
+              }
+            }
+          },
+          "Console": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "model": {
+                "type": "string"
+              },
+              "manufacturer": {
+                "type": "string"
+              },
+              "processor": {
+                "type": "string"
+              },
+              "price": {
+                "type": "number"
+              },
+              "quantity": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "memoryAmount": {
+                "type": "string"
+              }
+            }
+          },
+          "InvoiceViewModel": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "name": {
+                "type": "string"
+              },
+              "street": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "state": {
+                "type": "string"
+              },
+              "zipcode": {
+                "type": "string"
+              },
+              "item_type": {
+                "type": "string"
+              },
+              "item_id": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "unit_price": {
+                "type": "number"
+              },
+              "quantity": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "subtotal": {
+                "type": "number"
+              },
+              "tax": {
+                "type": "number"
+              },
+              "processing_fee": {
+                "type": "number"
+              },
+              "total": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    }

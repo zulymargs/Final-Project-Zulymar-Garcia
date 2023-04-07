@@ -13,10 +13,8 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
@@ -42,7 +40,7 @@ public class GameControllerTest {
 
     //Create a new Game
     @Test
-    public void shouldCreateBook() throws Exception {
+    public void shouldCreateGame() throws Exception {
         Game game = new Game();
         game.setId(1);
         game.setTitle("NewOne");
